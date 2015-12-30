@@ -99,8 +99,7 @@ theta = atan(mu./(z+eps));
 
 % “Empirical” initialization [1]
 invE(:) = pi/2 + sqrt(r).*(theta - (pi/2)); 
-
-for iter=1:4
+for iter=1:7
     [~, E] = elliptic12(invE(:),m,tol);
     invE(:) = invE(:)-(E - z)./sqrt( 1-m.*sin(invE(:)).^2 ); 
 end
